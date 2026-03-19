@@ -20,7 +20,7 @@ function PassengerPage() {
 
   const fetchBusLocations = async () => {
     try {
-      const response = await fetch('http://localhost:8080/api/bus-locations')
+      const response = await fetch('http://localhost:8080/api/bus-locations/latest')
 
       if (!response.ok) {
         throw new Error('Failed to fetch bus locations')
