@@ -1,0 +1,82 @@
+.driver-page {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.driver-page h1 {
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+.driver-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.driver-form label {
+  text-align: left;
+  font-weight: bold;
+  color: #555;
+}
+
+.driver-form input {
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  transition: border-color 0.3s;
+}
+
+.driver-form input:focus {
+  outline: none;
+  border-color: #2980b9;
+}
+
+.driver-form button {
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #2980b9;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.driver-form button:hover {
+  background-color: #1f6fa6;
+}
+
+.driver-form button:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+.status {
+  margin-top: 15px;
+  padding: 12px;
+  background-color: #ecf0f1;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.info {
+  margin-top: 30px;
+  padding: 15px;
+  background-color: #fff3cd;
+  border-radius: 8px;
+  border-left: 4px solid #ffc107;
+}
+
+.info p {
+  margin: 5px 0;
+  color: #856404;
+  font-size: 14px;
+}
