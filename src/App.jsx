@@ -9,7 +9,16 @@ function App() {
   const [error, setError] = useState(null)
 
   useEffect(() => {
+    // Fetch immediately when page loads
     fetchBusLocations()
+
+    // Then fetch every 3 seconds
+    const interval = setInterval(() => {
+      fetchBusLocations()
+    }, 3000)
+
+    // Cleanup: stop polling when component unmounts
+    return () => clearInterval(interval)
   }, [])
 
   const fetchBusLocations = async () => {
@@ -42,10 +51,8 @@ function App() {
       <h1>🚍 Real-Time Bus Tracker</h1>
       <p>Tracking {busLocations.length} bus location(s)</p>
 
-      {/* The Map Component */}
       <BusMap busLocations={busLocations} />
 
-      {/* Bus Cards Below the Map */}
       <div className="bus-list">
         {busLocations.map((location) => (
           <div key={location.id} className="bus-card">
