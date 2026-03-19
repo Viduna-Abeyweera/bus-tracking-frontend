@@ -38,11 +38,16 @@
   border-color: #2980b9;
 }
 
-.driver-form button {
+.driver-form input:disabled {
+  background-color: #ecf0f1;
+  color: #95a5a6;
+}
+
+.start-btn {
   padding: 15px;
   font-size: 18px;
   font-weight: bold;
-  background-color: #2980b9;
+  background-color: #27ae60;
   color: white;
   border: none;
   border-radius: 8px;
@@ -50,13 +55,24 @@
   transition: background-color 0.3s;
 }
 
-.driver-form button:hover {
-  background-color: #1f6fa6;
+.start-btn:hover {
+  background-color: #219a52;
 }
 
-.driver-form button:disabled {
-  background-color: #95a5a6;
-  cursor: not-allowed;
+.stop-btn {
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.stop-btn:hover {
+  background-color: #c0392b;
 }
 
 .status {
@@ -65,6 +81,37 @@
   background-color: #ecf0f1;
   border-radius: 8px;
   font-weight: bold;
+}
+
+.stats {
+  margin-top: 25px;
+  padding: 20px;
+  background-color: #eaf4fe;
+  border-radius: 10px;
+  border: 2px solid #2980b9;
+}
+
+.stats h3 {
+  margin-top: 0;
+  color: #2980b9;
+}
+
+.stats p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.live-indicator {
+  font-size: 20px;
+  font-weight: bold;
+  color: #e74c3c;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
 }
 
 .info {
