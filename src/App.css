@@ -11,6 +11,16 @@ h1 {
   margin-bottom: 5px;
 }
 
+/* Map Styles */
+.map-wrapper {
+  max-width: 900px;
+  margin: 20px auto;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Bus Cards */
 .bus-list {
   display: flex;
   flex-wrap: wrap;

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import BusMap from './components/BusMap'
 import './App.css'
 
 function App() {
@@ -41,6 +42,10 @@ function App() {
       <h1>🚍 Real-Time Bus Tracker</h1>
       <p>Tracking {busLocations.length} bus location(s)</p>
 
+      {/* The Map Component */}
+      <BusMap busLocations={busLocations} />
+
+      {/* Bus Cards Below the Map */}
       <div className="bus-list">
         {busLocations.map((location) => (
           <div key={location.id} className="bus-card">
