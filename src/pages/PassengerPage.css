@@ -6,12 +6,46 @@
   min-height: 100vh;
 }
 
-/* Rest of the CSS stays the same */
 h1 {
   color: #2c3e50;
   margin-bottom: 5px;
 }
 
+/* Stop Selector */
+.stop-selector {
+  margin: 15px auto;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.stop-selector label {
+  font-weight: bold;
+  color: #2c3e50;
+  font-size: 16px;
+}
+
+.stop-selector select {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: white;
+}
+
+.stop-selector select:focus {
+  outline: none;
+  border-color: #2980b9;
+}
+
+/* Map */
 .map-wrapper {
   max-width: 900px;
   margin: 20px auto;
@@ -20,6 +54,63 @@ h1 {
   overflow: hidden;
 }
 
+/* ETA Section */
+.eta-section {
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: left;
+}
+
+.eta-section h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.no-buses {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+}
+
+.eta-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.eta-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #2980b9;
+}
+
+.eta-bus-info h3 {
+  color: #2980b9;
+  margin: 0 0 5px 0;
+}
+
+.eta-distance {
+  color: #777;
+  font-size: 14px;
+}
+
+.eta-time {
+  text-align: right;
+}
+
+.eta-minutes {
+  font-size: 20px;
+  font-weight: bold;
+  color: #27ae60;
+}
+
+/* Bus Cards */
 .bus-list {
   display: flex;
   flex-wrap: wrap;

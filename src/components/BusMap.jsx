@@ -2,7 +2,7 @@ import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
 import L from 'leaflet'
 import { useEffect } from 'react'
 
-// Create a custom bus icon
+// Custom bus icon
 const createBusIcon = (busId) => {
   return L.divIcon({
     html: `<div class="bus-marker">
@@ -16,21 +16,39 @@ const createBusIcon = (busId) => {
   })
 }
 
-// This component auto-fits the map to show all markers
-function FitBounds({ busLocations }) {
+// Custom bus stop icon
+const createStopIcon = (name) => {
+  return L.divIcon({
+    html: `<div class="stop-marker">
+             <span class="stop-icon">🚏</span>
+             <span class="stop-label">${name}</span>
+           </div>`,
+    className: 'custom-stop-icon',
+    iconSize: [80, 40],
+    iconAnchor: [40, 40],
+    popupAnchor: [0, -35],
+  })
+}
+
+// Auto-fit map to show all markers
+function FitBounds({ busLocations, busStops }) {
   const map = useMap()
 
   useEffect(() => {
-    if (busLocations.length > 0) {
-      const bounds = busLocations.map((loc) => [loc.latitude, loc.longitude])
-      map.fitBounds(bounds, { padding: [50, 50] })
+    const allPoints = [
+      ...busLocations.map((loc) => [loc.latitude, loc.longitude]),
+      ...busStops.map((stop) => [stop.latitude, stop.longitude]),
+    ]
+
+    if (allPoints.length > 0) {
+      map.fitBounds(allPoints, { padding: [50, 50] })
     }
-  }, [busLocations, map])
+  }, [busLocations, busStops, map])
 
   return null
 }
 
-function BusMap({ busLocations }) {
+function BusMap({ busLocations, busStops = [] }) {
   const defaultCenter = [6.9271, 79.8612]
   const defaultZoom = 10
 
@@ -46,12 +64,12 @@ function BusMap({ busLocations }) {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
 
-        {/* Auto-fit map to show all buses */}
-        <FitBounds busLocations={busLocations} />
+        <FitBounds busLocations={busLocations} busStops={busStops} />
 
+        {/* Bus markers */}
         {busLocations.map((location) => (
           <Marker
-            key={location.id}
+            key={`bus-${location.id}`}
             position={[location.latitude, location.longitude]}
             icon={createBusIcon(location.busId)}
           >
@@ -63,6 +81,23 @@ function BusMap({ busLocations }) {
               Lng: {location.longitude.toFixed(6)}
               <br />
               Updated: {new Date(location.timestamp).toLocaleString()}
+            </Popup>
+          </Marker>
+        ))}
+
+        {/* Bus stop markers */}
+        {busStops.map((stop) => (
+          <Marker
+            key={`stop-${stop.id}`}
+            position={[stop.latitude, stop.longitude]}
+            icon={createStopIcon(stop.name)}
+          >
+            <Popup>
+              <strong>🚏 {stop.name}</strong>
+              <br />
+              Lat: {stop.latitude.toFixed(6)}
+              <br />
+              Lng: {stop.longitude.toFixed(6)}
             </Popup>
           </Marker>
         ))}
