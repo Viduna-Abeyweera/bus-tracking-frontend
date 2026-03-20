@@ -1,31 +1,27 @@
 import { useState, useEffect } from 'react'
 import BusMap from '../components/BusMap'
+import { timeAgo } from '../utils/timeAgo'
 import './PassengerPage.css'
 
 function PassengerPage() {
-
   const [busLocations, setBusLocations] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
   useEffect(() => {
     fetchBusLocations()
-
     const interval = setInterval(() => {
       fetchBusLocations()
     }, 3000)
-
     return () => clearInterval(interval)
   }, [])
 
   const fetchBusLocations = async () => {
     try {
       const response = await fetch('http://localhost:8080/api/bus-locations/latest')
-
       if (!response.ok) {
         throw new Error('Failed to fetch bus locations')
       }
-
       const data = await response.json()
       setBusLocations(data)
       setLoading(false)
@@ -56,7 +52,7 @@ function PassengerPage() {
             <h3>🚌 {location.busId}</h3>
             <p>Latitude: {location.latitude}</p>
             <p>Longitude: {location.longitude}</p>
-            <p>Last Updated: {new Date(location.timestamp).toLocaleString()}</p>
+            <p>Last Updated: {timeAgo(location.timestamp)}</p>
           </div>
         ))}
       </div>
