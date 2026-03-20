@@ -1,0 +1,121 @@
+.home-page {
+  min-height: 100vh;
+  background-color: #f5f6fa;
+}
+
+.hero {
+  background: linear-gradient(135deg, #2c3e50, #3498db);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.tagline {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+.role-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+}
+
+.role-card {
+  background-color: white;
+  border-radius: 15px;
+  padding: 40px 30px;
+  width: 300px;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.role-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.role-emoji {
+  font-size: 50px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.role-card h2 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.role-card p {
+  color: #777;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.role-btn {
+  display: inline-block;
+  padding: 10px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.passenger-card .role-btn {
+  background-color: #3498db;
+  color: white;
+}
+
+.driver-card .role-btn {
+  background-color: #27ae60;
+  color: white;
+}
+
+.features {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.features h2 {
+  color: #2c3e50;
+  margin-bottom: 25px;
+}
+
+.feature-list {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.feature {
+  background-color: white;
+  padding: 20px 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  width: 180px;
+}
+
+.feature span {
+  font-size: 30px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.feature p {
+  color: #555;
+  font-size: 14px;
+  margin: 0;
+}
