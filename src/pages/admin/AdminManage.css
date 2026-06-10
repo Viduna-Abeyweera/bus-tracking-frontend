@@ -1,0 +1,86 @@
+/* ===== Admin Management Pages (shared) ===== */
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-bottom: var(--space-2xl);
+}
+
+.back-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 500;
+  width: 100%;
+  margin-bottom: var(--space-sm);
+}
+
+.back-link:hover {
+  color: var(--primary-light);
+}
+
+/* Admin Form */
+.admin-form {
+  margin-bottom: var(--space-xl);
+}
+
+.admin-form h3 {
+  margin-bottom: var(--space-lg);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.form-actions {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+/* Data Table */
+.data-table {
+  padding: 0;
+  overflow: hidden;
+}
+
+.data-table table {
+  width: 100%;
+}
+
+.action-btns {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.status-select {
+  background: var(--bg-glass);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  font-family: var(--font-family);
+  cursor: pointer;
+  outline: none;
+}
+
+.status-select:focus {
+  border-color: var(--primary);
+}
+
+@media (max-width: 768px) {
+  .data-table {
+    overflow-x: auto;
+  }
+  .data-table table {
+    min-width: 600px;
+  }
+}
