@@ -43,7 +43,7 @@ The **Bus Tracker SL Frontend** is a single-page application that provides:
 ### Prerequisites
 
 - **Node.js** 18+ ([download](https://nodejs.org/))
-- **Backend API** running at `http://localhost:8080` (see [backend repo](../bus-tracking-backend))
+- **Backend API** running at `http://localhost:8080` (see [backend repo](https://github.com/Viduna-Abeyweera/bus-tracking-system))
 
 ### Installation
 
