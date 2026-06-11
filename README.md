@@ -287,4 +287,4 @@ vercel
 
 ## 📄 License
 
-MIT License — Built for SLIIT Software Engineering
+MIT License — Built by Viduna Abeyweera
