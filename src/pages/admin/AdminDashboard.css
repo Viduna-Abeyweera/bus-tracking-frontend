@@ -1,0 +1,140 @@
+/* ===== Admin Dashboard ===== */
+
+.admin-stats {
+  margin-bottom: var(--space-2xl);
+}
+
+.stats-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+}
+
+.stats-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.stats-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.stats-value {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.stats-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 4px;
+}
+
+.admin-section {
+  margin-bottom: var(--space-2xl);
+}
+
+.admin-section h2 {
+  margin-bottom: var(--space-lg);
+}
+
+/* Quick Actions */
+.action-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  text-decoration: none;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.action-card svg:first-child {
+  font-size: 1.5rem;
+  color: var(--primary-light);
+}
+
+.action-card h3 {
+  font-size: 1.05rem;
+}
+
+.action-card p {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.action-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  color: var(--primary-light);
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-top: auto;
+}
+
+/* Table */
+.fleet-table {
+  padding: 0;
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: var(--bg-glass);
+}
+
+th {
+  padding: var(--space-md) var(--space-lg);
+  text-align: left;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border);
+}
+
+td {
+  padding: var(--space-md) var(--space-lg);
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--border);
+}
+
+tbody tr:hover {
+  background: var(--bg-glass-hover);
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table-footer {
+  padding: var(--space-md) var(--space-lg);
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 768px) {
+  .fleet-table {
+    overflow-x: auto;
+  }
+
+  table {
+    min-width: 600px;
+  }
+}

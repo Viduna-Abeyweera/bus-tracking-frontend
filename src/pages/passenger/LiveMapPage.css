@@ -1,0 +1,166 @@
+/* ===== Live Map Page ===== */
+
+.live-map-page {
+  padding-top: var(--navbar-height);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.map-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-xl);
+  background: rgba(15, 14, 23, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.control-group {
+  display: flex;
+  gap: var(--space-sm);
+  flex: 1;
+  min-width: 0;
+}
+
+.control-group .form-select {
+  flex: 1;
+  min-width: 160px;
+  font-size: 0.85rem;
+  padding: 0.6rem 2rem 0.6rem 0.75rem;
+}
+
+.map-status {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  flex-shrink: 0;
+}
+
+.ws-indicator {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  background: var(--bg-glass);
+  border: 1px solid var(--border);
+}
+
+.ws-indicator.connected {
+  color: var(--success);
+  border-color: rgba(0, 212, 170, 0.3);
+}
+
+.bus-count {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.map-container {
+  flex: 1;
+  position: relative;
+}
+
+/* ETA Panel */
+.eta-panel {
+  position: absolute;
+  bottom: var(--space-lg);
+  right: var(--space-lg);
+  width: 340px;
+  z-index: 500;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.eta-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-md);
+}
+
+.eta-header h3 {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 1rem;
+}
+
+.eta-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.eta-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--bg-glass);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+
+.eta-bus {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.eta-time {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+.eta-minutes {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.eta-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.eta-distance {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.eta-empty {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  text-align: center;
+  padding: var(--space-md) 0;
+}
+
+@media (max-width: 768px) {
+  .map-controls {
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .control-group {
+    flex-direction: column;
+  }
+
+  .eta-panel {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    border-radius: 0;
+    margin: 0;
+  }
+}
